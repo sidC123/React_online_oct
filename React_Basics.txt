@@ -1,0 +1,411 @@
+1. What is React
+- React is javascript library. (Flexibility).
+- It is a component based library. and components are the building blocks of ReactJs.
+- React is use to build single page applications.
+- virtual dom is memory representation of actual dom.
+
+React was invented by 'Facebook';
+Angular was invented by 'Google';
+
+Actual DOM 
+There is too much memory wastage 
+It updates Slow
+It can directly update HTML
+Creates a new DOM if the element updates. 
+It allows us to directly target any specific node (HTML element)
+
+
+Virtual DOM
+Virtual dom is memory representation of Actual dom.
+Its compares Actual dom and Virtual dom and it change if there are any updates in.
+Update the JSX if the element is updated.
+
+- It compares actual dom and virtual dom. If there are any changes then react renders only that component.
+- Single page app has single html file which only reload component instead of reloading page.
+  MPAs- wikipedia.com , amazon.com
+  SPAa- Github.com, assurekit.com
+- It lets you compose complex UIs from small and isolated pieces of code called “components”.
+- Render returns a React element, which is a lightweight description of what to render.
+
+
+ ⭕⭕⭕⭕ PREREQUISITES ⭕⭕⭕⭕
+- Since it is a front end library:
+    - Basic Selectors
+    - Pseudo-classes and how to combine
+    - Box Model
+    - Flexbox
+    - Grid
+    - Positioning(relative, absolute)
+    - Inspecting webpage 🌟🌟🌟🌟🌟
+
+    - Variable Declarations (let and const)
+    - Object Literals
+    - Functions & Arrow Functions
+    - Object Destructuring
+    - Spread and Rest Operators (...myArray)
+    - Promises and Async Programming
+    - Event loop
+    - Global Execution
+    - Template Literals
+    - map(), filter() etc.
+
+
+
+2. Installation and Setup
+- Node.js and npm should be installed on the system. These are the Pre-requisites.
+- What is NodeJs-Framework / Open source javascript runtime environment.
+- Package Manager : npm
+- Download and install NodeJS : https://nodejs.org/en/
+- After installation Go to CMD:
+	-check version : node -v	
+- Create react App.
+npx create-react-app <project name>
+optional:
+(npm install -g create-react-app)
+- basic difference npx vs npm 
+
+
+3. React intro app and folder structure.
+node_modules: This is a folder that contains all of the dependencies and packages required for your React project. It is created automatically by npm when you install packages.
+
+public: This is a folder that contains static assets that will be served to the client, such as HTML, images, and other files. The index.html file in this folder is the main entry point for your React app and is used to mount your React components onto the DOM.
+
+src: This is the main source folder for your React app. It contains all of the JavaScript code, CSS stylesheets, and other assets required to build your app. Here's a brief explanation of some of the files and folders inside the src folder
+
+index.js: This is the main JavaScript file for your React app. It is responsible for rendering your React components onto the DOM and is typically the entry point for your app.
+
+App.js: This is the main React component for your app. It is responsible for rendering other components and managing the state of your app.
+
+App.css: This is a CSS file that contains styles specific to the App.js component.
+
+index.css: This is a global CSS file that contains styles that apply to the entire app.
+
+logo.svg: This is a default logo image that comes with Create React App.
+
+package.json: This is a file that contains metadata about your project and a list of dependencies required for your app to run. It also contains scripts that can be used to build, test, and deploy your app.
+
+README.md: This is a Markdown file that contains information about your project, such as installation instructions, usage examples, and other documentation.
+
+.gitignore: This is a file that specifies files and folders that should be ignored by Git when committing changes. It is used to prevent sensitive information or build artifacts from being checked into version control.
+
+package-lock.json: This is a file that contains information about the exact versions of packages installed in your project. It is used by npm to ensure that the same versions of packages are installed on different machines.
+
+⭕⭕⭕ Important ⭕⭕⭕
+1. check root directory of project
+2. npm start ( is it necessary to do npm start? )
+3. It searches for package.json file
+4. it goes to the scripts object and matches the key
+   with npm command
+5. Now ot goes to the actual start script in node_module
+   folder
+6. your React project starts at localhost:3000
+
+How React renders ❓❓❓
+- Starting point React is index.js
+- it targets a div with id="root" from index.html
+- then it renders the App.js inside the root
+- where App.js returns an HTML
+- Ultimaterly Index.js > App.js > Index.html
+
+
+⭕⭕⭕ Extensions ⭕⭕⭕
+- prettier eslint
+- es7 + react....
+
+
+4. JSX
+- JSX is a syntax extension for JavaScript that allows you to write HTML-like structures in your code. 
+- It was developed by Facebook to make it easier to create UI components and manipulate the DOM in React.
+
+Rules of creating a functional component:
+- React can be used with class and Functional components
+- Component file name must start with capital letter
+- Function name must start with Capital letter and should match with the file name.
+- It will return { return()} a JSX
+- JSX must have only one parent html element.
+- It must be exported
+- Before using component should be imported
+- We can render a component like an html tag ( It can be self closing also ).
+
+5. React Props:
+  const userData = [
+    {
+      userId: 1,
+      username: "siddhesh",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 2,
+      username: "satyam",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 3,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 4,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 5,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 6,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 7,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 8,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 9,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 10,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 11,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+    {
+      userId: 12,
+      username: "sumita",
+      email: "demo@email.com",
+      contact: "8686868695",
+    },
+  ]
+
+
+6.React Routing
+- App.jsx:
+   import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+   <Router>
+      <Navbar />
+      <Routes>
+         <Route path='/' element={<HomePage userDetails={userData} />} />
+         <Route path='/contact-us' element={<ContactUs />} />
+         <Route path='/about-us' element={<AboutUs />} />
+      </Routes>
+      <Footer />
+   </Router>
+
+- Navbar.jsx:
+   <ul className="flex justify-between gap-4 text-black">
+      {
+            navList.map((item, index) => {
+               return (
+                  <li key={index}>
+                        <Link to={item.URL}>
+                           {item.label}
+                        </Link>
+                  </li>
+               )
+            })
+      }
+   </ul>
+
+
+
+
+
+   ----------------------------------------------------------------------
+   FOR EACH AND FILTER PROBLEMS:
+   const books = [
+    {
+        "title": "To Kill a Mockingbird",
+        "genre": "Fiction",
+        "price": 120,
+        "launchYear": 1960,
+        "numPages": 281
+    },
+    {
+        "title": "1984",
+        "genre": "Science Fiction",
+        "price": 100,
+        "launchYear": 1949,
+        "numPages": 328
+    },
+    {
+        "title": "Pride and Prejudice",
+        "genre": "Romance",
+        "price": 80,
+        "launchYear": 1813,
+        "numPages": 279
+    },
+    {
+        "title": "The Great Gatsby",
+        "genre": "Fiction",
+        "price": 110,
+        "launchYear": 1925,
+        "numPages": 180
+    },
+    {
+        "title": "Moby-Dick",
+        "genre": "Adventure",
+        "price": 140,
+        "launchYear": 1851,
+        "numPages": 625
+    },
+    {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "genre": "Fantasy",
+        "price": 90,
+        "launchYear": 1997,
+        "numPages": 309
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "genre": "Fiction",
+        "price": 130,
+        "launchYear": 2005,
+        "numPages": 277
+    },
+    {
+        "title": "The Hobbit",
+        "genre": "Fantasy",
+        "price": 110,
+        "launchYear": 1937,
+        "numPages": 310
+    },
+    {
+        "title": "The Hunger Games",
+        "genre": "Science Fiction",
+        "price": 100,
+        "launchYear": 2008,
+        "numPages": 374
+    },
+    {
+        "title": "The Lord of the Rings",
+        "genre": "Fantasy",
+        "price": 230,
+        "launchYear": 1954,
+        "numPages": 1178
+    },
+    {
+        "title": "The Da Vinci Code",
+        "genre": "Mystery",
+        "price": 90,
+        "launchYear": 2003,
+        "numPages": 454
+    },
+    {
+        "title": "Brave New World",
+        "genre": "Science Fiction",
+        "price": 120,
+        "launchYear": 1932,
+        "numPages": 288
+    },
+    {
+        "title": "The Road",
+        "genre": "Dystopian",
+        "price": 150,
+        "launchYear": 2006,
+        "numPages": 287
+    },
+    {
+        "title": "The Shining",
+        "genre": "Horror",
+        "price": 80,
+        "launchYear": 1977,
+        "numPages": 447
+    },
+    {
+        "title": "War and Peace",
+        "genre": "Historical Fiction",
+        "price": 180,
+        "launchYear": 1869,
+        "numPages": 1392
+    },
+    {
+        "title": "The Alchemist",
+        "genre": "Fiction",
+        "price": 100,
+        "launchYear": 1988,
+        "numPages": 197
+    },
+    {
+        "title": "The Old Man and the Sea",
+        "genre": "Adventure",
+        "price": 70,
+        "launchYear": 1952,
+        "numPages": 127
+    },
+    {
+        "title": "Dune",
+        "genre": "Science Fiction",
+        "price": 140,
+        "launchYear": 1965,
+        "numPages": 412
+    },
+    {
+        "title": "The Odyssey",
+        "genre": "Epic Poetry",
+        "price": 90,
+        "launchYear": 1984,
+        "numPages": 475
+    },
+    {
+        "title": "The Chronicles of Narnia",
+        "genre": "Fantasy",
+        "price": 190,
+        "launchYear": 1950,
+        "numPages": 746
+    }
+]
+
+Tasks://
+// **Iterate through the list of books and print the titles and their corresponding launch years.
+
+//Create a function that calculates and prints the total cost of purchasing all the books in the list.
+
+// Using forEach, display the titles of books that belong to the "Science Fiction" genre.
+
+// Write a function that calculates and prints the average number of pages for all the books in the list.
+
+// Use forEach to find and display the titles of books published after the year 2000.
+
+// Using filter:
+// Create a new array containing only books that have a price lower than $100. Display the titles and their prices.
+
+// Filter the list to find books with more than 400 pages and display their titles and the number of pages.
+
+// Create a new array containing books published in the 20th century (between 1900 and 1999). Display their titles and launch years.
+
+// Filter the books to find only those with the genre "Fantasy." Display the titles and prices of these fantasy books.
+
+// Create a new array with books that have titles containing the word "the." Display the titles and genres of these books.
+
+
+
+// UseState() Hook:
+- React has unidirectional flow
+- States can only be passed from parent component to child component.

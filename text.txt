@@ -1,0 +1,86 @@
+--- Getting started with React ---
+What is react.
+Installation and Setup.
+Introduction to node.js and npm.
+Create react App.
+Simple Example.
+Absolute basics of Reusable components.
+The Basics – HTML DOM vs Virtual DOM.
+
+
+--- Components ---
+Introducing JSX.
+Creating component.
+Nesting components.
+Properties.
+
+
+--- React hooks ---
+React state hooks.
+React lifecycle hooks.
+
+
+--- Props in react ---
+Introduction
+Props
+Functions as props
+Props drilling
+
+
+--- Routing ---
+Introduction to routing.
+Routing for single page application.
+Parameters in routing.
+Parent to child communication.
+Not related components.
+Child to parent communication.
+
+
+--- Frontend designing with react ---
+Ways to add css to react application.
+	Inline
+	Using object
+	Using index.css
+How to use bootstrap to style in react.
+
+
+
+--- Forms ---
+Introduction
+Integrating a very popular formik library for react forms.
+Validations of form.
+Events of forms.
+Form actions.
+Controlled and Uncontrolled forms.
+
+
+--- State management --- 
+Introduction.
+Using contextApi of react for state management.
+Providers.
+Reducers for maintaining global state.
+
+
+--- Keys in react ---
+Using the Id of an element.
+Using the array index.
+
+
+--- Advanced Topics ---
+React Tools.
+How is virtual DOM better then Actual DOM in rendering.
+Conditional rendering.
+Looping through states for rendering.
+Make api calls for dynamic content and dynamic rendering of components.
+
+
+
+
+
+
+
+
+
+
+
+
