@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
 function App() {
-  // const [count, setCount] = useState(0);
-  // const [firstName, setFirstName] = useState("Sherlock");
-  // const [lastName, setLastName] = useState("Holmes");
+  const [count, setCount] = useState(0);
+  const [firstName, setFirstName] = useState("Sherlock");
+  const [lastName, setLastName] = useState("Holmes");
   const [color, setColor] = useState("bg-slate-400");
 
-  // const handleCount = () => {
-  //   setCount((count) => count + 1);
-  // }
+  const handleCount = () => {
+    setCount((count) => count + 1);
+  }
 
 
   const [uText, setUText] = useState("TEXT ");
