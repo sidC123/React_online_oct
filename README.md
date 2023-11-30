@@ -1,8 +1,15 @@
-# React + Vite
+Cloning respository:
+1. git clone <url>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Creating new repository:
+1. create new repository
+2. copy url
+3. git clone <url>
+4. Paste project files inside the repository folder
+5. git add .
+6. git commit -m "your message"
+7. git push
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+How to take pull of the repo after update:
+1. If changes are there in the local storage then we need to commit the changes first
+2. git pull
