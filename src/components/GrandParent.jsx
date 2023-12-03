@@ -1,5 +1,15 @@
 import ParentComponent from "./ParentComponent"
 
+// Notes:
+// 1. State created in parent
+// 2. State passed to child 
+// 3. State updated from parent in both the components
+
+// 1. State created in parent
+// 2. State passed to child 
+// 3. Parent state controlled from child
+// 4. By passing the parent functions
+
 const GrandParent = () => {
     return (
         <div className="bg-red-200 p-5 w-full max-w-2xl mx-auto rounded-2xl">

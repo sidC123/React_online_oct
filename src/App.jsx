@@ -1,31 +1,36 @@
 import { useState } from 'react';
-import GrandParent from "./components/GrandParent"
+// import GrandParent from "./components/GrandParent"
+// import Todo from './components/Todo';
+import TodoDemo from './components/TodoDemo';
+import SearchFilter from './components/SearchFilter';
+import PasswordGen from './components/PasswordGen';
+import SearchFilterDemo from './components/SearchFilterDemo';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [firstName, setFirstName] = useState("Sherlock");
-  const [lastName, setLastName] = useState("Holmes");
-  const [color, setColor] = useState("bg-slate-400");
+  // const [count, setCount] = useState(0);
+  // const [firstName, setFirstName] = useState("Sherlock");
+  // const [lastName, setLastName] = useState("Holmes");
+  const [color, setColor] = useState("bg-gray-600");
 
-  const handleCount = () => {
-    setCount((count) => count + 1);
-  }
+  // const handleCount = () => {
+  //   setCount((count) => count + 1);
+  // }
 
+  // const [inputText, setInputText] = useState("Initial input text");
+  // const [showText, setShowtext] = useState("SHOW text INITIAL");
 
-  const [inputText, setInputText] = useState("Initial input text");
-  const [showText, setShowtext] = useState("Initial show text");
-
-  const handleInput = (event) => {
-    // console.log(event.target.value);
-    setInputText(event.target.value)
-  }
+  // const handleInput = (event) => {
+  //   // console.log(event.target.value);
+  //   setInputText(event.target.value)
+  //   console.log("inputText state", inputText);
+  // }
 
   return (
     <>
-      <main className={`w-full min-h-screen relative ${color} flex flex-col justify-center items-center`}>
+      <main className={`w-full min-h-screen relative p-5 ${color} flex flex-col justify-center items-center`}>
 
         {/* Project: Background color changer */}
-        <div>
+        {/* <div>
           <button className='text-black p-4 mx-auto block bg-yellow-300 rounded' onClick={handleCount}>
             count is {count}
           </button>
@@ -73,9 +78,9 @@ function App() {
               Blue
             </button>
           </div>
-        </div>
+        </div> */}
 
-        <div className='w-full flex flex-col justify-center items-center p-10'>
+        {/* <div className='w-full flex flex-col justify-center items-center p-10'>
 
           <input type='text' className='shadow-lg w-[400px]' onChange={handleInput} />
 
@@ -91,11 +96,21 @@ function App() {
           <p className='text-3xl font-bold'>
             User text:
             <span className='text-red-600'>
-              {showText}
+              {inputText}
             </span>
           </p>
-        </div>
-        <GrandParent />
+        </div> */}
+
+        {/* <GrandParent /> */}
+
+        {/* <Todo /> */}
+        {/* <TodoDemo /> */}
+
+        <SearchFilter />
+        <SearchFilterDemo />
+
+        {/* <PasswordGen /> */}
+
       </main>
     </>
   )

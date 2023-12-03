@@ -6,7 +6,7 @@ const ParentComponent = () => {
     const [firstName, setFirstName] = useState("Rahul");
     const [lastName, setLastName] = useState("Patel");
 
-    const handleState = () => {
+    const handleIncrease = () => {
         setCount(count + 1);
     }
 
@@ -21,7 +21,7 @@ const ParentComponent = () => {
             <h4 className="bg-green-500 text-white mx-auto shadow-custom w-fit px-2">This is Parent.jsx</h4>
 
             <p>This is my useState value: {count}</p>
-            <button className='bg-violet-600 p-1 rounded mr-2' onClick={() => handleState()}>
+            <button className='bg-violet-600 p-1 rounded mr-2' onClick={() => handleIncrease()}>
                 Increase Count
             </button>
 
@@ -29,7 +29,15 @@ const ParentComponent = () => {
                 Decrease Count
             </button>
 
-            <ChildComponent firstName={firstName} lastName={lastName} setFirstName={setFirstName} setLastName={setLastName} propCount={count} />
+            <ChildComponent
+                firstName={firstName}
+                lastName={lastName}
+                setFirstName={setFirstName}
+                setLastName={setLastName}
+                propCount={count}
+                handleIncrease={handleIncrease}
+                handleDecrease={handleDecrease}
+            />
         </div>
 
     )
