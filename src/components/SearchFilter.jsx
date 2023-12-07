@@ -34,12 +34,11 @@ const SearchFilter = () => {
     ];
     // const [items, setItems] = useState(['Apple', 'Banana', 'Carrot', 'Date', 'Eggplant', 'Fig', 'Grape']);
 
-    // to store search quey
+    // to store search query
     const [search, setSearch] = useState('');
 
     // to store filtered array
     const [result, setResult] = useState(items);
-
 
     const handleSearchQuery = (event) => {
         // setting the query string to 'search' useState

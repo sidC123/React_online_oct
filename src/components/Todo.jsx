@@ -19,6 +19,7 @@
 // 10. use set funcion of todoList and provide this filteredArray to it.
 
 import { useState } from "react";
+import CustomTitle from "./CustomTitle";
 
 const Todo = () => {
     const [todos, setTodos] = useState([]);
@@ -42,7 +43,7 @@ const Todo = () => {
 
     return (
         <div className="w-1/2 p-4 bg-cyan-600 rounded-lg m-5">
-            <h1 className="text-center">Todo List</h1>
+            <CustomTitle titleText="My Todo App" />
 
             <div className="mx-auto w-fit">
                 <input

@@ -1,4 +1,3 @@
-import Button from "../Button"
 
 const Navbar = () => {
 
@@ -8,24 +7,20 @@ const Navbar = () => {
             label: "Home",
         },
         {
-            URL: "/contact-us",
-            label: "Contact",
+            URL: "/todo",
+            label: "Todo",
         },
         {
-            URL: "/about-us",
-            label: "About",
-        },
-        {
-            URL: "/offers",
-            label: "Offers",
+            URL: "/grand-parent",
+            label: "GrandParent",
         },
     ]
 
     return (
         <header>
-            <nav className="flex justify-between items-center bg-white rounded-xl gap-4">
-                <div>
-                    <img src="./image.png" alt="" className="h-16" />
+            <nav className="flex justify-between items-center shadow-lg bg-white gap-4 px-4">
+                <div className="font-bold text-lg text-orange-500">
+                    ReactJS
                 </div>
 
                 <div className="flex gap-5 items-center">
@@ -43,10 +38,12 @@ const Navbar = () => {
                         }
                     </ul>
 
-                    <Button btnText={"Buy Now"} />
+                    <button className="bg-blue-200 p-2 rounded-md">
+                        Buy Now
+                    </button>
                 </div>
             </nav>
-        </header >
+        </header>
     )
 }
 

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 // import GrandParent from "./components/GrandParent"
 // import Todo from './components/Todo';
-import TodoDemo from './components/TodoDemo';
-import SearchFilter from './components/SearchFilter';
+// import TodoDemo from './components/TodoDemo';
+// import SearchFilter from './components/SearchFilter';
 import PasswordGen from './components/PasswordGen';
-import SearchFilterDemo from './components/SearchFilterDemo';
+import Navbar from './components/Navbar';
+// import Homepage from './components/Homepage';
+import PassGenDemo from './components/PassGenDemo';
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -27,6 +29,8 @@ function App() {
 
   return (
     <>
+      <Navbar />
+
       <main className={`w-full min-h-screen relative p-5 ${color} flex flex-col justify-center items-center`}>
 
         {/* Project: Background color changer */}
@@ -106,10 +110,11 @@ function App() {
         {/* <Todo /> */}
         {/* <TodoDemo /> */}
 
-        <SearchFilter />
-        <SearchFilterDemo />
+        {/* <SearchFilter /> */}
 
         {/* <PasswordGen /> */}
+
+        <PassGenDemo />
 
       </main>
     </>
