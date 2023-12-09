@@ -1,44 +1,32 @@
+/* eslint-disable react/prop-types */
+import { Link, NavLink } from 'react-router-dom'
 
-const Navbar = () => {
-
-    const navList = [
-        {
-            URL: "/",
-            label: "Home",
-        },
-        {
-            URL: "/todo",
-            label: "Todo",
-        },
-        {
-            URL: "/grand-parent",
-            label: "GrandParent",
-        },
-    ]
-
+const Navbar = ({ navData }) => {
     return (
-        <header>
-            <nav className="flex justify-between items-center shadow-lg bg-white gap-4 px-4">
-                <div className="font-bold text-lg text-orange-500">
+        <header className="h-[70px] flex justify-center items-center bg-white shadow-lg sticky top-0 w-full">
+            <nav className="w-full flex justify-between items-center gap-4 px-4">
+                <Link to='/' className="font-bold text-3xl text-orange-500">
                     ReactJS
-                </div>
+                </Link>
 
                 <div className="flex gap-5 items-center">
-                    <ul className="flex justify-between gap-4 text-black">
+                    <ul className="flex justify-between gap-4 text-black text-lg">
                         {
-                            navList.map((item, index) => {
+                            navData.map((item, index) => {
                                 return (
                                     <li key={index}>
-                                        <a href={item.URL}>
+                                        <NavLink
+                                            to={item.URL}
+                                            className={({ isActive }) => `text-xl ${isActive ? "text-orange-500" : "text-blue-500"} font-semibold`}
+                                        >
                                             {item.label}
-                                        </a>
+                                        </NavLink>
                                     </li>
                                 )
                             })
                         }
                     </ul>
-
-                    <button className="bg-blue-200 p-2 rounded-md">
+                    <button className="bg-slate-500 text-white text-xl py-1 px-2 font-semibold rounded">
                         Buy Now
                     </button>
                 </div>
