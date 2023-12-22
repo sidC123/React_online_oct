@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const Navbar = ({ navData }) => {
     return (
-        <header className="h-[70px] flex justify-center items-center bg-white shadow-lg sticky top-0 w-full">
+        <header className="h-[70px] flex justify-center items-center bg-slate-300 shadow-lg sticky top-0 w-full">
             <nav className="w-full flex justify-between items-center gap-4 px-4">
                 <Link to='/' className="font-bold text-3xl text-orange-500">
                     ReactJS
@@ -27,7 +27,7 @@ const Navbar = ({ navData }) => {
                         }
                     </ul>
                     <button className="bg-slate-500 text-white text-xl py-1 px-2 font-semibold rounded">
-                        Buy Now
+                        Hire Me
                     </button>
                 </div>
             </nav>

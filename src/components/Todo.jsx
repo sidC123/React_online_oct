@@ -18,12 +18,14 @@
 // 9. create a new variable which will hold the filteredArr ( except the index provided)
 // 10. use set funcion of todoList and provide this filteredArray to it.
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import CustomTitle from "./CustomTitle";
 
 const Todo = () => {
     const [todos, setTodos] = useState([]);
     const [inputValue, setInputValue] = useState('');
+
+    const inputField = useRef(null);
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value)
@@ -31,7 +33,7 @@ const Todo = () => {
 
     const handleSubmit = () => {
         if (inputValue) {
-            setTodos([...todos, inputValue]);
+            setTodos((prevTodos) => [...prevTodos, inputValue]);
             setInputValue('');
         }
     }
@@ -39,6 +41,25 @@ const Todo = () => {
     const handleDelete = (index) => {
         console.log(index);
         setTodos(todos.filter((_, currentIndex) => currentIndex !== index));
+    }
+
+    const handleUpdate = (index, updatedValue) => {
+        if (updatedValue.trim() !== '') {
+            setTodos((prevTodos) => {
+                const updatedTask = prevTodos.map((val, currentIndex) => {
+                    if (currentIndex === index) {
+                        return updatedValue;
+                    }
+                    return val;
+                });
+                return updatedTask;
+            });
+        } else {
+            alert('Task cannot be empty!');
+            inputField.current.focus();
+        }
+
+        setInputValue("")
     }
 
     return (
@@ -52,6 +73,7 @@ const Todo = () => {
                     placeholder="Add your task"
                     value={inputValue}
                     onChange={handleInputChange}
+                    ref={inputField}
                 />
                 <button
                     className="px-1 rounded font-semibold bg-green-600 ml-2 shadow"
@@ -69,12 +91,21 @@ const Todo = () => {
                             className="flex items-center justify-between bg-yellow-500 text-white shadow p-1 rounded"
                         >
                             {todo}
-                            <button
-                                className="bg-red-600 p-1 font-semibold rounded text-black"
-                                onClick={() => handleDelete(index)}
-                            >
-                                Delete
-                            </button>
+                            <div className="gap-2 flex items-center">
+                                <button
+                                    className="bg-red-600 p-1 font-semibold rounded text-black"
+                                    onClick={() => handleDelete(index)}
+                                >
+                                    Delete
+                                </button>
+
+                                <button
+                                    className="bg-blue-600 p-1 font-semibold rounded text-black"
+                                    onClick={() => handleUpdate(index, inputValue)}
+                                >
+                                    Update
+                                </button>
+                            </div>
                         </li>
                     ))
                 }
