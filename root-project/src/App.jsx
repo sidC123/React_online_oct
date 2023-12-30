@@ -13,6 +13,7 @@ import Contact from './pages/Contact/Contact';
 import Form from './components/Formik_without_Ui_library/Form';
 import ApiRequest from './components/ApiRequests';
 import Demo from './components/Demo';
+import ImageUploadForm from './components//ImageUploadForm';
 
 function App() {
   const navList = [
@@ -58,7 +59,12 @@ function App() {
     {
       URL: "/react-form",
       label: "React form Validation",
-    }
+    },
+    {
+      URL: "/image-upload",
+      label: "Image Upload Form",
+    },
+
   ]
 
   return (
@@ -77,6 +83,7 @@ function App() {
           <Route path='/api-req' element={<ApiRequest />} />
           <Route path='/react-form' element={<Form />} />
           <Route path='/updating-objects-inside-array' element={<UpdateObjectsInsideArray />} />
+          <Route path='/image-upload' element={<ImageUploadForm />} />
           <Route path='/demo' element={<Demo />} />
         </Routes>
         <Footer />

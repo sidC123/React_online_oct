@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Link, NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Navbar = ({ navData }) => {
+    const countVal = useSelector((state) => state.counter.value);
     return (
         <header className="h-[70px] flex justify-center items-center bg-slate-300 shadow-lg sticky top-0 w-full">
             <nav className="w-full flex justify-between items-center gap-4 px-4">
                 <Link to='/' className="font-bold text-3xl text-orange-500">
-                    ReactJS
+                    ReactJS {countVal}
                 </Link>
 
                 <div className="flex gap-5 items-center">

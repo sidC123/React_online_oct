@@ -66,6 +66,7 @@ const Todo = () => {
         <div className="w-1/2 p-4 bg-cyan-600 rounded-lg m-5">
             <CustomTitle titleText="My Todo App" />
 
+            {/* Add todo form */}
             <div className="mx-auto w-fit">
                 <input
                     type="text"
@@ -83,6 +84,7 @@ const Todo = () => {
                 </button>
             </div>
 
+            {/* List todos */}
             <ul className="mt-2 flex flex-col gap-2">
                 {
                     todos && todos.map((todo, index) => (
