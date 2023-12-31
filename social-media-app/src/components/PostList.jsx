@@ -1,29 +1,17 @@
-import Post from "./Post"
+import Post from "./Post";
+import { PostContext } from "../store/social-media-store";
+import { useContext } from "react";
 
 const PostList = () => {
+    const { postList } = useContext(PostContext);
+
     return (
-        <div className="row row-cols-3 gy-3">
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+        <div className="d-flex flex-column gap-3">
+            {
+                postList && postList.map((post) => (
+                    <Post key={post.id} post={post} />
+                ))
+            }
         </div>
     )
 }
