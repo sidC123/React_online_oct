@@ -29,7 +29,7 @@ const Navbar = ({ navData }) => {
                         }
                     </ul>
                     <button className="bg-slate-500 text-white text-xl py-1 px-2 font-semibold rounded">
-                        Hire Me
+                        Navigate to Todo
                     </button>
                 </div>
             </nav>
