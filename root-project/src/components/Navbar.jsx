@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Link, NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ navData }) => {
     const countVal = useSelector((state) => state.counter.value);
+    const navigate = useNavigate();
+
     return (
         <header className="h-[70px] flex justify-center items-center bg-slate-300 shadow-lg sticky top-0 w-full">
             <nav className="w-full flex justify-between items-center gap-4 px-4">
@@ -28,7 +31,11 @@ const Navbar = ({ navData }) => {
                             })
                         }
                     </ul>
-                    <button className="bg-slate-500 text-white text-xl py-1 px-2 font-semibold rounded">
+                    <button className="bg-slate-500 text-white text-xl py-1 px-2 font-semibold rounded"
+                        onClick={() => {
+                            navigate('/todo');
+                        }}
+                    >
                         Navigate to Todo
                     </button>
                 </div>

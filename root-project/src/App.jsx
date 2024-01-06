@@ -14,6 +14,15 @@ import Form from './components/Formik_without_Ui_library/Form';
 import ApiRequest from './components/ApiRequests';
 import Demo from './components/Demo';
 import ImageUploadForm from './components//ImageUploadForm';
+import Accordian from './components/accordian';
+import ModalTest from './components/custom-modal-popup/modal-test';
+import TabTest from './components/custom-tabs/tab-test';
+import GithubProfileFinder from './components/github-profile-finder';
+import ImageSlider from './components/image-slider';
+import LightDarkMode from './components/light-dark-mode';
+import LoadMoreData from './components/load-more-data';
+import QRCodeGenerator from './components/qr-code-generator';
+import ScrollIndicator from './components/scroll-indicator';
 
 function App() {
   const navList = [
@@ -27,7 +36,7 @@ function App() {
     },
   ]
 
-  const homedata = [
+  const routeData = [
     {
       URL: "/grand-parent",
       label: "GrandParent",
@@ -64,6 +73,74 @@ function App() {
       URL: "/image-upload",
       label: "Image Upload Form",
     },
+    {
+      URL: "/accordion",
+      label: "Accordion",
+    },
+    {
+      URL: "/popup-modal",
+      label: "Modal Popup",
+    },
+    {
+      URL: "/custom-Nav-tabs",
+      label: "Nav Tabs",
+    },
+    {
+      URL: "/github-profile-finder",
+      label: "GitHub Profile Finder",
+    },
+    {
+      URL: "/image-slider",
+      label: "Image Slider",
+    },
+    {
+      URL: "/theme-changer",
+      label: "Theme changer",
+    },
+    {
+      URL: "/load-more-data",
+      label: "Load More Data",
+    },
+    {
+      URL: "/qr-code-generator",
+      label: "QR Code Generator",
+    },
+    {
+      URL: "/scroll-indicator",
+      label: "Scroll indicator",
+    },
+    {
+      URL: "/scroll-to-top-bottom",
+      label: "Scroll to top bottom",
+    },
+    {
+      URL: "/search-autocomplete",
+      label: "Search Autocomplete",
+    },
+    {
+      URL: "/star-rating",
+      label: "Star rating",
+    },
+    {
+      URL: "/tic-tac-toe",
+      label: "Tic Tac toe",
+    },
+    {
+      URL: "/tree-view",
+      label: "Tree View",
+    },
+    {
+      URL: "/use-fetch",
+      label: "Use fetch",
+    },
+    {
+      URL: "/use-outside-click",
+      label: "Use outside click",
+    },
+    {
+      URL: "/use-window-resize",
+      label: "Use window resize",
+    },
 
   ]
 
@@ -72,7 +149,7 @@ function App() {
       <BrowserRouter>
         <Navbar navData={navList} />
         <Routes>
-          <Route path='/' element={<Homepage homedata={homedata} />} />
+          <Route path='/' element={<Homepage routeData={routeData} />} />
           <Route path='/grand-parent' element={<GrandParent />} />
           <Route path='/pass-gen' element={<PasswordGen />} />
           <Route path='/todo' element={<Todo />} />
@@ -85,9 +162,20 @@ function App() {
           <Route path='/updating-objects-inside-array' element={<UpdateObjectsInsideArray />} />
           <Route path='/image-upload' element={<ImageUploadForm />} />
           <Route path='/demo' element={<Demo />} />
+          <Route path='/accordion' element={<Accordian />} />
+          <Route path='/popup-modal' element={<ModalTest />} />
+          <Route path='/custom-Nav-tabs' element={<TabTest />} />
+          <Route path="/github-profile-finder" element={<GithubProfileFinder />} />
+          <Route path="/image-slider" element={<ImageSlider url={"https://picsum.photos/v2/list"} page={"1"} limit={"10"} />} />
+          <Route path="/theme-changer" element={<LightDarkMode />} />
+          <Route path="/load-more-data" element={<LoadMoreData />} />
+          <Route path="/qr-code-generator" element={<QRCodeGenerator />} />
+          <Route path="/scroll-indicator" element={<ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />} />
+          <Route path="/scroll-indicator" element={<ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />} />
+
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </BrowserRouter >
     </>
   )
 }

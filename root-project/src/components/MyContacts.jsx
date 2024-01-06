@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Loading from "./Loading";
 
 // GET -  retrieve data /api/endpoint
 // POST -  send and retrieve data (body required) /api/endpoint
@@ -17,6 +18,9 @@ import axios from "axios";
 const MyContacts = () => {
     const [contacts, setContacts] = useState([]);
     const [userName, setUserName] = useState('');
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
+
 
     const getUsers = async () => {
         try {
@@ -42,11 +46,15 @@ const MyContacts = () => {
     }
 
     const deleteContact = async (id) => {
+        setLoading(true);
         try {
             const res = await axios.delete(`https://6443f21e466f7c2b4b5df7ed.mockapi.io/users/${id}`);
             console.log(res);
             getUsers();
+            setLoading(false);
         } catch (error) {
+            setLoading(false);
+            setError(true);
             console.log(error);
         }
     }
@@ -77,19 +85,26 @@ const MyContacts = () => {
                 <button type="submit" className="py-1 px-2 font-semibold rounded bg-green-500">ADD USER</button>
             </form>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-                {
-                    contacts.map((person) => (
-                        <h3 className="bg-slate-400 flex items-center justify-between p-2 mb-1 shadow-md" key={person.id}>
-                            <span className="font-semibold text-lg">
-                                {person.name}
-                            </span>
+            {
+                loading ? (<Loading />)
+                    : error ? (<h1 className="text-5xl font-bold">Error...</h1>)
+                        : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+                                {
+                                    contacts.map((person) => (
+                                        <h3 className="bg-slate-400 flex items-center justify-between p-2 mb-1 shadow-md" key={person.id}>
+                                            <span className="font-semibold text-lg">
+                                                {person.name}
+                                            </span>
 
-                            <button className="bg-orange-600 text-white font-semibold rounded p-1" onClick={() => deleteContact(person.id)}>Remove Contact</button>
-                        </h3>
-                    ))
-                }
-            </div>
+                                            <button className="bg-orange-600 text-white font-semibold rounded p-1" onClick={() => deleteContact(person.id)}>Remove Contact</button>
+                                        </h3>
+                                    ))
+                                }
+                            </div>
+                        )
+            }
+
         </div>
     )
 }
