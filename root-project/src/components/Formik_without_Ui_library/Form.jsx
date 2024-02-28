@@ -9,6 +9,7 @@ const SignInForm = () => {
         password: Yup.string()
             .required("Password is required")
             .min(4, "Password is too short - should be 4 chars min")
+            .max(16, "Password is too long - should be 16 chars max")
     });
 
     const initialValues = {

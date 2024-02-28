@@ -21,7 +21,6 @@ const MyContacts = () => {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
 
-
     const getUsers = async () => {
         try {
             const res = await axios.get("https://6443f21e466f7c2b4b5df7ed.mockapi.io/users");

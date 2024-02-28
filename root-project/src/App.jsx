@@ -23,6 +23,15 @@ import LightDarkMode from './components/light-dark-mode';
 import LoadMoreData from './components/load-more-data';
 import QRCodeGenerator from './components/qr-code-generator';
 import ScrollIndicator from './components/scroll-indicator';
+import SearchAutocomplete from './components/search-autocomplete-with-api';
+import StarRating from './components/star-rating';
+import TicTacToe from './components/tic-tact-toe';
+import TreeView from './components/tree-view';
+import menus from "./components/tree-view/data";
+import UseFetchHookTest from "./components/use-fetch/test";
+import UseOnclickOutsideTest from "./components/use-outside-click/test";
+import UseWindowResizeTest from "./components/use-window-resize/test";
+import Stopwatch from './components/stopwatch/Stopwatch';
 
 function App() {
   const navList = [
@@ -76,6 +85,10 @@ function App() {
     {
       URL: "/accordion",
       label: "Accordion",
+    },
+    {
+      URL: "/stopwatch",
+      label: "Stopwatch",
     },
     {
       URL: "/popup-modal",
@@ -171,8 +184,14 @@ function App() {
           <Route path="/load-more-data" element={<LoadMoreData />} />
           <Route path="/qr-code-generator" element={<QRCodeGenerator />} />
           <Route path="/scroll-indicator" element={<ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />} />
-          <Route path="/scroll-indicator" element={<ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />} />
-
+          <Route path="/search-autocomplete" element={<SearchAutocomplete />} />
+          <Route path="/star-rating" element={<StarRating />} />
+          <Route path="/tic-tac-toe" element={<TicTacToe />} />
+          <Route path="/tree-view" element={<TreeView menus={menus} />} />
+          <Route path="/use-fetch" element={<UseFetchHookTest />} />
+          <Route path="/use-outside-click" element={<UseOnclickOutsideTest />} />
+          <Route path="/use-window-resize" element={<UseWindowResizeTest />} />
+          <Route path='/stopwatch' element={<Stopwatch />} />
         </Routes>
         <Footer />
       </BrowserRouter >

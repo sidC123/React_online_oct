@@ -25,7 +25,7 @@ export default function SearchAutocomplete() {
     }
   }
 
-  function handleClick(event){
+  function handleClick(event) {
     setShowDropdown(false)
     setSearchParam(event.target.innerText)
     setFilteredUsers([])

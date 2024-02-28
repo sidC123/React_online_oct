@@ -6,8 +6,8 @@ import data from "./data";
 import "./styles.css";
 
 export default function Accordian() {
-  const [selected, setSelected] = useState(null);
   const [enableMultiSelection, setEnableMultiSelection] = useState(false);
+  const [selected, setSelected] = useState(null);
   const [multiple, setMultiple] = useState([]);
 
   function handleSingleSelection(getCurrentId) {
@@ -25,12 +25,13 @@ export default function Accordian() {
     setMultiple(cpyMutiple);
   }
 
-  console.log(selected, multiple);
+  // console.log(selected, multiple);
   return (
     <div className="acc-wrapper">
       <button onClick={() => setEnableMultiSelection(!enableMultiSelection)}>
         Enable Multi Selection
       </button>
+
       <div className="accordian">
         {data && data.length > 0 ? (
           data.map((dataItem) => (
